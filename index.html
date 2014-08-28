@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>RESUME</title>
+	<meta charset = "utf-8">
+	<link type="image/x-icon" href="images/Mario-icon.png" rel="shortcut icon"></link>
+	<link href='http://fonts.googleapis.com/css?family=Playfair+Display' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Inconsolata' rel='stylesheet' type='text/css'>
+
+	<style>
+	body{
+		background-color: #90A1E4;
+	}
+		button{
+			background-color: rgb(0, 153, 204);
+			text-align: center;
+			font-size: 16px;
+			cursor: pointer;
+			font-family: 'Inconsolata', ;
+			padding: 10px;
+		}
+
+    	div#mycontent{
+    		font-size: 18px;
+    		width: 98%;
+    		height: 426px;
+    		padding: 10px 10px 10px 10px;
+    		background: #90A1E4;
+    		font-family: 'Montserrat', sans-serif;
+    		font-weight: 400;
+    	}
+    	div#mymenu{
+    		padding: 10px 30px;
+    	}
+    	div#btn_marker{
+    		position: absolute;
+    		border: #000 1px solid;
+    		background-color: #130CEE;
+    		opacity: 0.5;
+    		top: 96px;
+    		width: 0px;
+    		height: 43px;
+     		display: none;
+    		-webkit-transition:left .5s ease 0s, width .5s linear 0s;
+    		-moz-transition:left .5s ease 0s, width .5s linear 0s;
+    		transition:left .5s ease 0s, width .5s linear 0s;
+    	}
+    	span{
+    		display: none;
+    	}
+    	h1{
+    		font-family: 'Playfair Display', serif;
+    	}
+	</style>
+	<script>
+	function initMenu(){
+		document.getElementById("btn_marker").style.left = document.getElementById("btn1").offsetLeft + "px";
+		document.getElementById("btn_marker").style.width = document.getElementById("btn1").offsetWidth-2 + "px";
+		document.getElementById("btn_marker").style.display = "block";
+	}
+	function loadContent(btn, con){
+		document.getElementById("btn_marker").style.left = btn.offsetLeft + "px";
+		document.getElementById("btn_marker").style.width = btn.offsetWidth-2 + "px";
+		document.getElementById("mycontent").innerHTML = con.innerHTML;
+	}
+	window.addEventListener('load', function(event){
+		initMenu();
+	});
+	</script>
+</head>
+<body>
+<center>
+	<h1>Nagirniak Vadim</h1>
+	<div id="mymenu">
+	<div id="btn_marker"></div>
+
+		<button id="btn1" onclick="loadContent(this, forMyFoto)">My Foto
+			<span id="forMyFoto"><img  src="images/my_foto.jpg" width=270 height=370 alt="my foto" title="My profile in VK"></span>
+		</button>
+
+		<button id="btn2" onclick="loadContent(this, forDateOfBirth)">Date Of Birth
+			<span id="forDateOfBirth"> 18.08.1992 <br></span>
+		</button>
+
+		<button id="btn3" onclick="loadContent(this, forContacts)">Contacts
+			<span id="forContacts"> 
+				<b><big>Phone number:</big></b> +38 099 6337654 <br>
+				<b><big>E-mail:</big></b><a href="mailto: nagirniak92@mail.ru"> nagirniak92@mail.ru</a><br>
+				<b><big>Skype:</big></b> vadim055140 <br>
+				<b><big>Location:</big></b> Ukraine, Lviv, St. Karadzich, 13/8 <br>
+			</span>
+		</button>
+
+		<button id="btn4" onclick="loadContent(this, forEducation)">Education
+			<span id="forEducation">5th year student of Lviv National Politecnic University, "Information Management System" </span>
+		</button>
+
+		<button id="btn5" onclick="loadContent(this, forVolunteerExperience)">Volunteer experience
+			<span id="forVolunteerExperience">
+				<table border="1"  cellspacing="0" cellpadding="5">
+					<tr>
+						<th>Place of work</th>
+						<th>Description of activity</th>
+						<th>Duration</th>
+					</tr>
+					<tr>
+						<td width="150">AIESEC</td>
+						<td width="350"><p>Searching Ukrainian students for Global Community Development Program abroad (conducting interviews with students, helping them to find their internship in database, negotiations with foreign Local Committee, servicing);</p><p>Organizer of the "Step-by-Step 2" - an educational project in which participated  15 trainees, 50 students.</p>
+						<p>I was an intern at EDISON project in the Czech Republic (worked in schools with children)</p></td>
+						<td width="130">12 months, 2013</td>
+					</tr>
+				</table>
+			</span>
+		</button>
+
+		<button id="btn6" onclick="loadContent(this, forLanguagesLevel)">Languages Level
+			<span id="forLanguagesLevel">
+				Ukrainian - native, Russian - advanced, English - pre-intermediate
+			</span>
+		</button>
+
+		<button id="btn7" onclick="loadContent(this, forHobbiesAndInterests)">Hobbies and interests
+			<span id="forHobbiesAndInterests">
+				Archery, photographie, travelling
+			</span>
+		</button>
+
+		<button id="btn8" onclick="loadContent(this, forPersonalSkills)">Personal skills
+			<span id="forPersonalSkills">
+				Communication, time management, commitment
+			</span>
+		</button>
+
+	</div>
+	<div id="mycontent">
+	<img  src="images/my_foto.jpg" width=270 height=370 alt="my foto" title="My profile in VK">	
+	</div>
+</center>
+</body>
+</html>
